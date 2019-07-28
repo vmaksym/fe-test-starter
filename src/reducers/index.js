@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { FarmsReducer } from './farms'
+import { farmsReducer } from './farms'
 
 const makeRootReducer = () => combineReducers({
-    FarmsReducer
+  farms:farmsReducer
 });
 
 export default makeRootReducer

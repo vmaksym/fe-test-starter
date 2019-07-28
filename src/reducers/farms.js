@@ -1,15 +1,17 @@
 import * as farmsActions from "../actions/farms";
 
-let farmsState = {
-    activeFarm: {}
-};
+const farmsState = {
+      activeFarm:{
+        fields:[]
+      }
+    };
 
-export const FarmsReducer = (state = farmsState, action) => {
-    switch (action.type) {
+export const farmsReducer = (state = farmsState, action) => {
+  switch (action.type) {
         case farmsActions.GET_ACTIVE_FARM_SUCCESS:
             return {
                 ...state,
-                farm: action.farm
+              activeFarm: action.activeFarm
             };
         default:
             return state;

@@ -7,7 +7,7 @@ const epicMiddleware = createEpicMiddleware();
 
 const configureStore = () => {
     const store = createStore(
-        rootReducer,
+        rootReducer(),
         applyMiddleware(epicMiddleware)
     );
 
