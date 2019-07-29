@@ -12,6 +12,15 @@ class App extends Component {
     dispatch(fetchCrops());
   }
 
+  getYield = (field) => {
+      if (!!field.crop) {
+          const {crop} = field;
+          return crop.expected_yield * field.hectares / (crop.disease_risk_factor * field.disease_susceptibility) * crop.price_per_tonne
+      } else {
+          return 0;
+      }
+  };
+
   render() {
     const {activeFarm, dispatch} = this.props;
 
@@ -32,7 +41,7 @@ class App extends Component {
                 <div>Feild: {field.name}</div>
                 <img className='icon' src="/img/map-localization-icon-14.png"></img>
                 <div>Crop: <CropSelect value={field.crop || {name: ''}} onChange={crop => dispatch(setCrop(field, crop)) }></CropSelect></div>
-                <div>Yield: </div>
+                <div>Yield: {this.getYield(field)}</div>
             </li>)}
         </ul>
       </div>
