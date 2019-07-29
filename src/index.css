@@ -3,3 +3,36 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.header {
+  height: 3rem;
+}
+
+.left {
+  float: left;
+  height: calc(100vh - 3rem);
+  width: 250px;
+  padding: 1rem;
+}
+
+.left li {
+  display: block;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dedede;
+}
+
+.left li > * {
+  margin-bottom: 0.5rem;
+}
+
+.body {
+  float: right;
+  height: calc(100vh - 3rem);
+  width: calc(100% - 252px - 2rem);
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.5;
+}

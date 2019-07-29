@@ -16,5 +16,3 @@ const getActiveFarm = action$ => action$.pipe(
 export const farmsEpics = combineEpics(
     getActiveFarm
 );
-
-// dispatch(fetchActiveFarm());
